@@ -15,8 +15,8 @@ function login({ email, password }) {
   );
 }
 
-function register({ username, password }) {
-  return client("register", { body: { username, password } }).then(
+function register({ password, confirmPassword }) {
+  return client("register", { body: { password, confirmPassword } }).then(
     handleUserResponse(data)
   );
 }

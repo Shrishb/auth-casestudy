@@ -23,7 +23,7 @@
       </slot>
 
       <section>
-        <button name="spe-form-button" @click="$emit('submit')">{{nameSubmit}}</button>
+        <button @click="$emit('submit')">{{nameSubmit}}</button>
       </section>
     </div>
     <div v-if="loading"></div>

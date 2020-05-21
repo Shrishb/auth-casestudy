@@ -19,8 +19,8 @@ export default {
   methods: {
     loginUser() {
       auth.login({
-        email: "eve.holt@reqres.in",
-        password: "cityslicka",
+        email,
+        password,
       });
     },
     resetPassword() {

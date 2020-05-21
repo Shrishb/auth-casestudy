@@ -5,14 +5,15 @@
       <img src="@/assets/signin.png" alt />
     </template>
 
-    <form-wrapper :process="process" nameSubmit="Login">
-      <label for>Email</label>
-      <input type="email" name id />
+    <form-wrapper :process="process" nameSubmit="Login" @submit="loginUser">
+      <label for>Email:</label>
+      <input type="email" v-model="email"/>
 
-      <label for>Password</label>
-      <input type="email" name id />
+      <label for>Password:</label>
+      <input type="email" v-model="email"/>
 
       <a @click="goTo('/reset')">Want to reset Password?</a>
+
     </form-wrapper>
   </auth-wrapper>
 </template>
@@ -23,10 +24,12 @@ import { push } from "@/utils/browserHistory";
 export default {
   mixins: [AuthMixin],
   mounted() {
-    this.loginUser();
   },
   data() {
-    return {};
+    return {
+      email:null,
+      password:null
+    };
   },
   computed: {},
   methods: {

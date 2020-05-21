@@ -6,10 +6,10 @@
     </template>
 
     <form-wrapper :process="process" nameSubmit="Save">
-      <label for>New Password</label>
+      <label for>New Password:</label>
       <input type="password"/>
 
-      <label for>Confirm Password</label>
+      <label for>Confirm Password:</label>
       <input type="password"/>
     </form-wrapper>
   </auth-wrapper>
