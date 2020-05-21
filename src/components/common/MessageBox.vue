@@ -2,7 +2,10 @@
   <article :class="['message', classColour]">
     <section class="message-body">
       <div class="media">
-        <div class="media-content"></div>
+        <div class="media-content">
+          <div> {{ message.text}}</div>
+          <div> {{ message.data}}</div>
+        </div>
       </div>
     </section>
   </article>
@@ -10,9 +13,9 @@
 
 <script>
 const props = {
-  text: {
-    type: String,
-    default: "Success"
+  message: {
+    type: Object,
+    required: true
   },
   classColour: {
     type: String,

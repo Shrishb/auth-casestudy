@@ -1,7 +1,9 @@
 <template>
   <header>
     <div class="header-left logo-container">
-      <img src="@/assets/Logo.png" alt />
+      <a href="/">
+      <img src="@/assets/Logo.png" alt="Frankie Logo" />
+      </a>
     </div>
     <div class="header-right">  
       <NavLink class="nav-menu" text="About Frankie" />
@@ -36,6 +38,10 @@ header{
       cursor: pointer;
       padding: 0 2rem;
       font-size: 1em;
+      font-weight: 500;
+    }
+    &:hover{
+      text-decoration: underline;
     }
     .user-menu{
       display: flex;
@@ -45,8 +51,8 @@ header{
         height:10px;
         width: 10px;
         color: #ccc;
-        font-size: 26px;
-        margin-left: 1rem;
+        font-size: 20px;
+        margin-left: 0.5rem;
       }
     }
   }

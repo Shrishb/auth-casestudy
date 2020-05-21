@@ -14,28 +14,47 @@ export default {
         loading: false,
         error: null,
         success: null,
-        data:null
+        data: null,
       },
-      email: null,
-      password: null,
+      email: "",
+      password: "",
+      emailError: false,
+      passwordError: false,
     };
   },
   methods: {
-      async loginUser() {
-      const { email, password } = this;
-      this.process["loading"] = true;
+    async loginUser() {
+      this.checkLogin();
+      
+      const { email, password, emailError, passwordError } = this;
 
-      const result = await auth.login({
-        email,
-        password,
-      });
+      if (!emailError || !passwordError) {
+        this.process["loading"] = true;
 
-      if(result){
-        this.process["success"] = true;
+        const result = await auth.login({
+          email,
+          password,
+        });
+
+        const {token } = result;
+
+        if (token) {
+          this.process["success"] = true;
+          this.process["loading"] = false;
+        }else{
+          this.process["error"] = true;
+          this.process["loading"] = false;
+        }
         this.process["data"] = result;
-        this.process["loading"] = false;
-      }
 
+      }
+    },
+    checkLogin() {
+      this.resetProcess();
+      const { email, password } = this;
+
+      this.emailError = email.length>0? false : true;
+      this.passwordError = password.length>0? false : true ;
     },
     async resetPassword() {
       let result = auth.login({
@@ -43,5 +62,13 @@ export default {
         password,
       });
     },
+    resetProcess(){
+      this.process = {
+        loading: false,
+        error: null,
+        success: null,
+        data: null,
+      };
+    }
   },
 };

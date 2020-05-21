@@ -1,19 +1,20 @@
 import { client } from "./api-client";
 
-function handleUserResponse(data) {
-  return data;
-}
-
 async function login({ email, password }) {
-  let response = await client("login", { body: { email, password } });
-
-  return response;
+  try {
+    let response = await client("login", {
+      body: { email, password },
+    });
+    return response;
+  } catch (error) {
+    return error;
+  }
 }
 
-function register({ password, confirmPassword }) {
-  return client("register", { body: { password, confirmPassword } }).then(
-    handleUserResponse(data)
-  );
+async function register({ password, confirmPassword }) {
+  let response = await client("register", {
+    body: { password, confirmPassword },
+  });
 }
 
 export { login, register };
