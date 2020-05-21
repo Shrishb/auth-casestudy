@@ -16,7 +16,7 @@ async function client(endpoint, { body, ...customConfig } = {}) {
   return window
     .fetch(`${process.env.VUE_APP_API_HOST}/${endpoint}`, config)
     .then(async (r) => {
-      if (r.status === 401) {
+      if (r.status === 400) {
         return Promise.reject({ message: "Please re-authenticate." });
       }
       const data = await r.json();

@@ -17,7 +17,7 @@
         <article class="message is-success">
           <div class="message-body">
             <strong>Success:</strong>
-            {{success}}
+            {{data}}
           </div>
         </article>
       </slot>
@@ -54,6 +54,10 @@ export default {
     },
     success() {
       if (this.process) return this.process.success;
+      else return false;
+    },
+     data() {
+      if (this.process) return this.process.data;
       else return false;
     }
     // _error() {
