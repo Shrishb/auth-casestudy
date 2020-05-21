@@ -9,8 +9,9 @@
               <slot name="title" />
             </h1>
           </div>
+            <slot />
           <div>
-              <slot name="image" />
+            <slot name="image" />
           </div>
         </div>
       </div>
@@ -19,10 +20,8 @@
 </template>
 
 <script>
-
 export default {
-  components: {
-  }
+  components: {}
 };
 </script>
 

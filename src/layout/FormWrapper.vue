@@ -37,7 +37,7 @@ const props = {
   },
   nameSubmit: {
     type: String,
-    default:"Submit"
+    default: "Submit"
   }
 };
 
