@@ -2,24 +2,14 @@
 <template>
   <section>
     <div v-if="!loading">
-      <slot v-if="!loading">
+      <slot>
         <!-- form content here -->
       </slot>
       <slot v-if="error" name="error">
-        <article class="message is-danger">
-          <div class="message-body">
-            <strong>Error:</strong>
-            <!-- {{_error}} -->
-          </div>
-        </article>
+        <MessageBox />
       </slot>
       <slot v-if="success" name="success">
-        <article class="message is-success">
-          <div class="message-body">
-            <strong>Success:</strong>
-            {{data}}
-          </div>
-        </article>
+        <MessageBox />
       </slot>
 
       <section>
@@ -31,6 +21,9 @@
 </template>
 
 <script>
+import MessageBox from "../components/common/MessageBox";
+import Spinner from "../components/common/Spinner";
+
 const props = {
   process: {
     type: Object
@@ -43,6 +36,10 @@ const props = {
 
 export default {
   props,
+  components: {
+    MessageBox,
+    Spinner
+  },
   computed: {
     loading() {
       if (this.process) return this.process.loading;
@@ -56,7 +53,7 @@ export default {
       if (this.process) return this.process.success;
       else return false;
     },
-     data() {
+    data() {
       if (this.process) return this.process.data;
       else return false;
     }

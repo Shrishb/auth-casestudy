@@ -1,20 +1,17 @@
 <template>
-  <section class="hero is-primary is-fullheight">
-    <div class="hero-body zero-pad">
-      <div class="container is-fluid is-paddingless is-marginless">
-        <div class="columns is-centered is-marginless has-background-primary">
-          <div class="column is-6">
-            <br />
-            <h1 class="title has-text-white" v-if="this.$slots['title']">
-              <slot name="title" />
-            </h1>
-          </div>
-            <slot />
-          <div>
-            <slot name="image" />
-          </div>
-        </div>
+  <section class="login-container">
+    <div class="login-left-container">
+      <div class="login-title">
+        <h1>
+          <slot name="title" />
+        </h1>
       </div>
+      <div class="login-form">
+        <slot />
+      </div>
+    </div>
+    <div class="login-right-container">
+      <slot name="image" />
     </div>
   </section>
 </template>
@@ -25,5 +22,30 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss">
+section.login-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 80px;
+  @media screen and (max-width: 1155px) {
+    padding: 0 40px;
+  }
+  .login-left-container {
+    flex: 1;
+    @media screen and (max-width: 1023px) {
+      flex: 0 0 100%;
+    }
+    .login-title {
+      h1 {
+        font-size: 3rem;
+        font-weight: 400;
+      }
+    }
+  }
+  .login-right-container {
+    img {
+      width: 100%;
+    }
+  }
+}
 </style>

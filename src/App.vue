@@ -19,5 +19,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+  #app{
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  *{
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  }
+
 </style>
