@@ -1,15 +1,28 @@
 <template>
-  <TopNav />
+  <auth-wrapper>
+    <template slot="title">Sign In</template>
+    <template slot="image">
+      <img src="@/assets/signin.png" alt />
+    </template>
+
+    <form-wrapper :process="process" nameSubmit="Login">
+      <label for>Email</label>
+      <input type="email" name id />
+
+      <label for>Password</label>
+      <input type="email" name id />
+
+      <a @click="goTo('/articles')"> Want to reset Password? </a>
+    </form-wrapper>
+  </auth-wrapper>
 </template>
 
 <script>
-import * as auth from "@/utils/auth-client";
-import TopNav from "@/components/nav/Header/TopNav";
 
+import AuthMixin from "@/mixins/AuthMixin";
+import { push } from "@/utils/browserHistory";
 export default {
-  components: {
-    TopNav
-  },
+  mixins: [AuthMixin],
   mounted() {
     this.loginUser();
   },
@@ -17,16 +30,10 @@ export default {
     return {};
   },
   computed: {
-    name() {
-      return this.data;
-    }
   },
   methods: {
-    loginUser() {
-      auth.login({
-        email: "eve.holt@reqres.in",
-        password: "cityslicka"
-      });
+      goTo(route) {
+      push(route)
     }
   }
 };

@@ -5,11 +5,13 @@ function handleUserResponse(data) {
 }
 
 function login({ email, password }) {
-  return client("login", { body: { email, password } }).then(data=>
-   { handleUserResponse(data)},
-   error => {
-    console.error('oh no, login failed')
-  },
+  return client("login", { body: { email, password } }).then(
+    (data) => {
+      handleUserResponse(data);
+    },
+    (error) => {
+      handleUserResponse(error);
+    }
   );
 }
 

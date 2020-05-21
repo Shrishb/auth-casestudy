@@ -1,16 +1,20 @@
 <template>
   <div id="app">
-    <Login />
+    <TopNav />
+    <AuthRouter />
   </div>
 </template>
 
 <script>
-import Login from '@/pages/Login';
+import TopNav from "@/components/nav/Header/TopNav";
+import AuthRouter from "./AuthRouter";
+import { push } from "./utils/browserHistory";
 
 export default {
   name: 'App',
   components: {
-    Login
+    AuthRouter,
+    TopNav
   }
 }
 </script>
