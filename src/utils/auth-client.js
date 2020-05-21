@@ -19,8 +19,4 @@ function register({ username, password }) {
   );
 }
 
-function isLoggedIn() {
-  return true;
-}
-
-export { login, register, isLoggedIn };
+export { login, register };

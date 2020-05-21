@@ -1,10 +1,10 @@
 <template>
-<TopNav />
+  <TopNav />
 </template>
 
 <script>
 import * as auth from "@/utils/auth-client";
-import TopNav from '@/components/nav/Header/TopNav';
+import TopNav from "@/components/nav/Header/TopNav";
 
 export default {
   components: {

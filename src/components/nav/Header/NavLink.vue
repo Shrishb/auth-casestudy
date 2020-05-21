@@ -1,10 +1,10 @@
 <template>
-  <a href="#">{{ title }}</a>
+  <a href="#">{{ text }}</a>
 </template>
 
 <script>
 const props = {
-  title: {
+  text: {
     type: String,
     require: true
   }
