@@ -4,15 +4,10 @@ function handleUserResponse(data) {
   return data;
 }
 
-function login({ email, password }) {
-  return client("login", { body: { email, password } }).then(
-    (data) => {
-      handleUserResponse(data);
-    },
-    (error) => {
-      handleUserResponse(error);
-    }
-  );
+async function login({ email, password }) {
+  let response = await client("login", { body: { email, password } });
+
+  return response;
 }
 
 function register({ password, confirmPassword }) {

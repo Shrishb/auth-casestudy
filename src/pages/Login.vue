@@ -10,7 +10,7 @@
       <input type="email" v-model="email"/>
 
       <label for>Password:</label>
-      <input type="email" v-model="email"/>
+      <input type="password" v-model="password"/>
 
       <a @click="goTo('/reset')">Want to reset Password?</a>
 
@@ -27,8 +27,6 @@ export default {
   },
   data() {
     return {
-      email:null,
-      password:null
     };
   },
   computed: {},

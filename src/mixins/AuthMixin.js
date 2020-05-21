@@ -6,7 +6,7 @@ import * as auth from "@/utils/auth-client";
 export default {
   components: {
     AuthWrapper,
-    FormWrapper
+    FormWrapper,
   },
   data() {
     return {
@@ -14,17 +14,28 @@ export default {
         loading: false,
         error: null,
       },
+      email: null,
+      password: null,
     };
   },
   methods: {
-    loginUser() {
-      auth.login({
+      async loginUser() {
+      const { email, password } = this;
+      const result = await auth.login({
         email,
         password,
       });
+
+      if(result){
+        
+      }
+
     },
-    resetPassword() {
-      let { newPassword, access_token } = this.payload;
+    async resetPassword() {
+      let result = auth.login({
+        email,
+        password,
+      });
     },
   },
 };

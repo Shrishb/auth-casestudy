@@ -21,7 +21,7 @@ async function client(endpoint, { body, ...customConfig } = {}) {
       }
       const data = await r.json();
       if (r.ok) {
-        return data;
+        return Promise.resolve(data);
       } else {
         return Promise.reject(data);
       }

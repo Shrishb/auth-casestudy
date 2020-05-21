@@ -1,8 +1,12 @@
 <template>
   <header>
-    <img src="@/assets/Logo.png" alt />
-    <NavLink text="About Frankie" />
-    <UserRole />
+    <div class="header-left logo-container">
+      <img src="@/assets/Logo.png" alt />
+    </div>
+    <div class="header-right">  
+      <NavLink class="nav-menu" text="About Frankie" />
+      <UserRole class="user-menu" />
+    </div>
   </header>
 </template>
 
@@ -18,5 +22,19 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+header{
+  display: flex;
+  justify-content: space-between;
+  .header-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .nav-menu{
+      all: unset;
+      padding: 0 1rem;
+      font-size: 1em;
+    }
+  }
+}
 </style>
