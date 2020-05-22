@@ -2,7 +2,7 @@
 
 context('Navigation', () => {
   beforeEach(() => {
-    cy.visit('https://example.cypress.io')
+    cy.visit('https://localhost:8080')
     cy.get('.navbar-nav').contains('Commands').click()
     cy.get('.dropdown-menu').contains('Navigation').click()
   })
@@ -25,32 +25,21 @@ context('Navigation', () => {
     // clicking forward
     cy.go(1)
     cy.location('pathname').should('include', 'navigation')
+
+ 
+    cy.title().should('include', 'Kitchen Sink')
   })
 
-  it('cy.reload() - reload the page', () => {
-    // https://on.cypress.io/reload
-    cy.reload()
-
-    // reload the page without using the cache
-    cy.reload(true)
+  it('.submit() - submit a form', () => {
+    // https://on.cypress.io/submit
+    cy.get('.action-form')
+      .find('[type="text"]').type('HALFOFF')
+    cy.get('.action-form').submit()
+      .next().should('contain', 'Your form has been submitted!')
   })
 
-  it('cy.visit() - visit a remote url', () => {
-    // https://on.cypress.io/visit
-
-    // Visit any sub-domain of your current domain
-
-    // Pass options to the visit
-    cy.visit('https://example.cypress.io/commands/navigation', {
-      timeout: 50000, // increase total time for the visit to resolve
-      onBeforeLoad (contentWindow) {
-        // contentWindow is the remote page's window object
-        expect(typeof contentWindow === 'object').to.be.true
-      },
-      onLoad (contentWindow) {
-        // contentWindow is the remote page's window object
-        expect(typeof contentWindow === 'object').to.be.true
-      },
-    })
-    })
+  it('cy.url() - get the current URL', () => {
+    // https://on.cypress.io/url
+    cy.url().should('eq', 'https://example.cypress.io/commands/location')
+  })
 })

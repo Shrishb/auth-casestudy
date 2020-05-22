@@ -6,6 +6,7 @@
 <script>
 import { listen } from "./utils/browserHistory";
 import routes from './routes';
+import Default from "./pages/Default";
 
 export default {
   data() {
@@ -25,7 +26,7 @@ export default {
   },
   computed: {
     routedComponent() {
-      return routes[this.current];
+      return routes[this.current] || Default;
     }
   },
   render(createElement) {
