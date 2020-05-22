@@ -59,7 +59,7 @@ export default {
     message() {
       let response ={};
       let { error, success,data: responseData } = this;
-      let {token, error: errorMessage} = responseData;
+      let {token =null, error: errorMessage =null} = responseData;
 
       if (success) {
         response["text"] = "Logged in Succesfully";
