@@ -11,11 +11,7 @@ context('Querying', () => {
   it('cy.get() - query DOM elements', () => {
     // https://on.cypress.io/get
 
-    cy.get('#query-btn').should('contain', 'Button')
-
-    cy.get('.query-btn').should('contain', 'Button')
-
-    cy.get('#querying .well>button:first').should('contain', 'Button')
+    cy.get('.login-title > h1').should('contain', 'Sign In')
     //              ↲
     // Use CSS selectors just like jQuery
 
@@ -39,7 +35,7 @@ context('Querying', () => {
       .and('have.css', 'position', 'static')
   })
 
-  it('cy.contains() - query DOM elements with matching content', () => {
+  it.skip('cy.contains() - query DOM elements with matching content', () => {
     // https://on.cypress.io/contains
     cy.get('.query-list')
       .contains('bananas')
