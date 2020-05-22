@@ -20,10 +20,14 @@ npm run build
 npm run test
 ```
 
-### Lints and fixes files
+### Test Data
 ```
-npm run lint
-```
+for test input please use the below credentials
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Login
+{
+    "email": "eve.holt@reqres.in",
+    "password": "pistol"
+}
+
+```

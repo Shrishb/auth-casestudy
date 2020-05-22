@@ -42,5 +42,41 @@ describe("AuthMixin.js", () => {
             data: null,
           });
     });
+  
+    test("test checkLength return true if string length less than 0", () => {
+      expect(wrapper.vm.checkLength("")).toBeTruthy();
+    });
+
+    test("test checkLength return true if string length greater than 0", () => {
+      expect(wrapper.vm.checkLength("test")).toBeFalsy();
+    });
+
+    test("test updateProcess updates the process object based if token exists", () => {
+      const result = {token:"123"};
+
+      wrapper.vm.updateProcess(result);
+
+      expect(wrapper.vm.process).toEqual({
+        loading: false,
+        error: null,
+        success: true,
+        data: result,
+      });
+      
+    });
+
+    test("test updateProcess updates the process object based if token does not exist", () => {
+      const result = {};
+
+      wrapper.vm.updateProcess(result);
+
+      expect(wrapper.vm.process).toEqual({
+        loading: false,
+        error: true,
+        success: null,
+        data: result,
+      });
+      
+    });
   });
 });

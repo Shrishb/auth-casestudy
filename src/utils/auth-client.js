@@ -11,10 +11,15 @@ async function login({ email, password }) {
   }
 }
 
-async function register({ password, confirmPassword }) {
-  let response = await client("register", {
-    body: { password, confirmPassword },
-  });
+async function reset({ password, confirmPassword }) {
+  try {
+    let response = await client("register", {
+      body: {email:"eve.holt@reqres.in", password },
+    });
+    return response;
+  } catch (error) {
+    return error;
+  }
 }
 
-export { login, register };
+export { login, reset };

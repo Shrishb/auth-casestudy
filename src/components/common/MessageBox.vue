@@ -3,8 +3,9 @@
     <section class="message-body">
       <div class="media">
         <div class="media-content">
-          <div> {{ message.text}}</div>
-          <div> {{ message.data}}</div>
+          <span> {{ message.text}}</span>
+          <br />
+          <span>TOKEN: {{ message.data}}</span>
         </div>
       </div>
     </section>

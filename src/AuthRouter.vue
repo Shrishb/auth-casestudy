@@ -1,4 +1,4 @@
-<!-- Router.vue -->
+<!-- AuthRouter.vue -->
 <template>
   <component :is="routedComponent"></component>
 </template>
@@ -12,9 +12,12 @@ export default {
     return { current: window.location.pathname };
   },
   mounted() {
+    //browser navigation listener
     listen((route, previousRoute) => {
       this.current = route
     });
+
+    //detect back and forth in the browser
     window.addEventListener(
       "popstate",
       event => (this.current = window.location.pathname)
