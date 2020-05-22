@@ -1,5 +1,5 @@
 <template>
-  <a href="#">{{ text }}</a>
+  <a :href="routeTo">{{ text }}</a>
 </template>
 
 <script>
@@ -7,6 +7,10 @@ const props = {
   text: {
     type: String,
     require: true
+  },
+  routeTo: {
+    type: String,
+    default: "#"
   }
 };
 

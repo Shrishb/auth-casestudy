@@ -1,3 +1,5 @@
+// Common structure for Auth pages
+
 <template>
   <section class="login-container">
     <div class="login-left-container">

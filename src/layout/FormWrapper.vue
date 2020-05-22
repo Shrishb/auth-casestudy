@@ -1,4 +1,4 @@
-// Common structure for Auth pages
+// Common structure for Form
 <template>
   <section class="form-wrapper">
     <div>

@@ -11,7 +11,7 @@ export default {
   data() {
     return { current: window.location.pathname };
   },
-  created() {
+  mounted() {
     listen((route, previousRoute) => {
       this.current = route
     });
