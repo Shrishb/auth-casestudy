@@ -5,7 +5,7 @@
         <div class="media-content">
           <span> {{ message.text}}</span>
           <br />
-          <span>TOKEN: {{ message.data}}</span>
+          <span>Response: {{ message.data}}</span>
         </div>
       </div>
     </section>
@@ -29,22 +29,33 @@ export default {
 };
 </script>
 
+
 <style lang="scss" scoped>
-.message {
-
-  .is-info{
+  .message.is-info{
     background-color: #f6fbfe;
+    .message-body {
+      color: #12537e;
+      border-radius: 4px;
+      border-style: solid;
+      border-width: 0 0 0 4px;
+      border-color: #209cee;
+      padding: 1.25em 1.5em;
+    }
   }
 
-  .is-danger{
+  .message.is-danger{
     background-color: #fff5f7;
+    .message-body {
+      border-color: #ff3860;
+      color: #cd0930;
+      border-radius: 4px;
+      border-style: solid;
+      border-width: 0 0 0 4px;
+      padding: 1.25em 1.5em;
+    }
   }
-
-  .message-body {
-    border-color: #209cee;
-    color: #12537e;
-  }
-
+.message {
+  margin-top: 1rem;
   .media {
     padding-top: 0;
     border: 0;

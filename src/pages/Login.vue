@@ -5,19 +5,20 @@
       <img src="@/assets/signin.png" alt="Sign in" />
     </template>
     <form-wrapper :process="process" nameSubmit="Login" @submit="loginUser">
-      <label for>
+      <label for="email">
         <b>Email:</b>
       </label>
-      <input type="email" placeholder="Enter email" v-model="email" />
+      
+      <input type="email" id="email" placeholder="Enter email" v-model="email" />
       <p v-if="emailError" class="error">Please enter valid email</p>
 
-      <label for>
+      <label for="password">
         <b>Password:</b>
       </label>
-      <input type="password" placeholder="Enter password" v-model="password" />
+      <input type="password" id="password" placeholder="Enter password" v-model="password" />
       <p v-if="passwordError" class="error">Please enter password</p>
 
-      <a @click="goTo('/reset')">Want to reset password?</a>
+      <a id="reset" @click="goTo('/reset')">Want to reset password?</a>
     </form-wrapper>
   </auth-wrapper>
 </template>

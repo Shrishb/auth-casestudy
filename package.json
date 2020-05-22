@@ -7,6 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
     "test": "jest"
   },
   "dependencies": {
@@ -15,14 +16,14 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.3.0",
+    "@vue/cli-plugin-unit-jest": "^4.3.1",
     "@vue/cli-service": "^4.3.0",
     "@vue/test-utils": "^1.0.3",
-    "cypress": "^4.5.0",
+    "cypress": "^4.6.0",
     "jest": "^26.0.1",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11",
-    "@vue/cli-plugin-unit-jest": "^4.3.1"
+    "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
     "root": true,

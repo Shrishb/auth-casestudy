@@ -9,12 +9,12 @@
         <label for="newPassword">
           <b>New Password:</b>
         </label>
-        <input type="password" id="newPassword" v-model="newPassword"/>
+        <input type="password" id="newPassword" v-model="newPassword" placeholder="Enter new password"/>
         <p v-if="newPasswordError" class="error">Please enter new passsword</p>
         <label for="confirmPassword">
           <b>Confirm Password:</b>
         </label>
-        <input type="password" id="confirmPassword" v-model="confirmPassword"/>
+        <input type="password" id="confirmPassword" v-model="confirmPassword" placeholder="Confirm your new password"/>
         <p v-if="confirmPasswordError" class="error">Please enter confirm password</p>
       </form-wrapper>
     </div>

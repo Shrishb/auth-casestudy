@@ -87,6 +87,7 @@ export default {
     margin-top: 1rem;
     border-bottom: 2px solid #ccc;
     width: 400px;
+    padding: 5px 0;
     margin-bottom: 2rem;
     @media screen and (max-width: 1155px) {
       width: 100%;
